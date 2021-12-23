@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "8ec462ca-bdfd-4844-9f03-1070cfb3b05d",
+		"name": "Rozez",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://search.rozetka.com.ua/search/api/v6/autocomplete/?front-type=xl&country=UA&lang=ru&text=%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function (){",
+							"    pm.response.to.have.status(200)",
+							"})",
+							"",
+							"pm.test(\"Content-Type is present\", function (){",
+							"    pm.response.to.have.header(\"Content-Type\")",
+							"})",
+							"pm.test(\"Response time is less than 20000000000ms\", function (){",
+							"    pm.expect(pm.response.responseTime).to.be.below(20000000000)",
+							"})",
+							"pm.test ( function(){",
+							"    pm.expect(pm.response.text()).to.include(\"кошелек\")",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Origin",
+						"value": "https://rozetka.com.ua"
+					},
+					{
+						"key": "Cookie",
+						"value": "_fbp=fb.2.1636556835516.1825694511; cto_bundle=t6LmOl80UWFORGpxMjl2MG1wTWN2WUQ1R0RYdDFZZ01hMm9Ick9NbXRwd2htQzU1dzVkQnJpaVUlMkZyaWVoJTJGWVd0Mzh5NUx1eW1hNHZURDlIJTJCZlE2RjllR3RiY29jTFVPclNUTUk1VHhPUGxIbWExYTBQcHJGZGl5cFolMkZoMlNnTXk5ZHFtWkE0M3ZzN2NzTFIwOG0wRTd3T2J3amhjQnlZJTJGWm1EQ3VOZjhxNjRDJTJCelUlM0Q; USER_ID=11132812; __exponea_etc__=1b8506a9-5738-4ece-9c14-1093e3fad3a8; __exponea_time2__=1.9419870376586914; _ga=GA1.3.134793531.1636556836; _gid=GA1.3.1857702469.1636723463; af_sources=[]; afclid=31648038181631548311; login=sashaja.sj%40gmail.com; ussajwt=eyJhbGciOiJSUzI1NiIsImtpZCI6InVzc2F0LnYwIiwidHlwIjoiSldUIn0.eyJkZXRhaWxzIjoiM2Y0NzE4YzUxMmNmN2UwNWE2MTNmNzBiZDI1NTNhYWU3NzZlYjdhYzQ4MWI0MDBmZWQ5ODVjZTgxNWUxNjVhNzMwNDFhY2ZkOGQzNDYxMmM4YmRkNzRmYzQ5MGI2YzA0ZTI5NDgxZmM4NGY2M2UyMGU3YzMwYWMxZGQ1YjA3NWUxM2I0NTIzYTk3ZjgwMzllNzUwYzZlZmE1MDZhNGNlMWZkNjBjNTJmZWFkMjc3MzRmMjM0ZDFiZjM0N2M1NWFkMzRmY2UyZGRhNDJlZGViNmQ1MTc0MDJkYmFlZDk0ZGFmNTUzODYyZjk5MjdkMzdmMTg0Y2E5OWJlOGIzNjFmZiIsImV4cCI6IjE2MzY3NjY2NjUiLCJ1c3NhdCI6IjM4OTFjNDBiZjA1Njc3NjJmYjkyZjAwOTAwMjdlZTkzLnVhLTM2OWJiMWM4MDgwZDE4NGVlMTM2OWVjZjJlMGNhNGQxLjE2MzY3NjY2NjUifQ.fjkxuWaFn1aoiDYxSUaZ5czLBCcKbN2BBHV_yHOuG9Cns_n5KCfpkxWfB7MzH8D5YrqUrdI7E75aweZNcSr2m_ZhDMEOWFHJ_1V6aPZqvVeAEk4Kth8yTPOVKxI2X6_s-J3GRVPKBH1hYpc6fZ3lFbt2dYOJ-2tMgicOqCcOrgXRTbefDG8bkyunKbusoiBMfOckrwtA0GEy1R5hOE-KROl-Hsrg5S7toZFuQlraqB6aPCFsabamB_IjzRnMJpvdwIPELD4qP0dNeKGMBwOWRWbk7GMt3mcPsCenT0bf2LsenD5Vrau5Gek_lL7wrCEsRaNm1BzEM29PQKo6xKD2FA; ussat=3891c40bf0567762fb92f0090027ee93.ua-369bb1c8080d184ee1369ecf2e0ca4d1.1636766665; ussat_exp=1636766665; ussrt=6c475b4992e6260b6e78351c79a1873c.ua-369bb1c8080d184ee1369ecf2e0ca4d1.1639315465; ab-cart-se=new; __utmz_gtm=utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); _gcl_au=1.1.1642041014.1636556835; uid=rB4eBmGL4CNtu4vnBqvIAg==; visitor_city=1; slang=ru; p=ec06ba126b4c3975ab7e90df711ed26c0787140f; xab_segment=46; _uss-csrf=QXt4YklO4Jofwd96mKCxuaBIciRC1RCbxYhil+XR9FYMRoCV; ussapp=a8W1nvHK3V3kFVGioUt8GnOS8MzOOTASyVVrKtYo"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Host",
+						"value": "search.rozetka.com.ua"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru"
+					},
+					{
+						"key": "Referer",
+						"value": "https://rozetka.com.ua/"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					}
+				],
+				"url": {
+					"raw": "https://search.rozetka.com.ua/search/api/v6/autocomplete/?front-type=xl&country=UA&lang=ru&text=%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA",
+					"protocol": "https",
+					"host": [
+						"search",
+						"rozetka",
+						"com",
+						"ua"
+					],
+					"path": [
+						"search",
+						"api",
+						"v6",
+						"autocomplete",
+						""
+					],
+					"query": [
+						{
+							"key": "front-type",
+							"value": "xl"
+						},
+						{
+							"key": "country",
+							"value": "UA"
+						},
+						{
+							"key": "lang",
+							"value": "ru"
+						},
+						{
+							"key": "text",
+							"value": "%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D0%B5%D0%BA"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
